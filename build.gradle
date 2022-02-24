@@ -1,3 +1,37 @@
+//plugins {
+//	id 'org.springframework.boot' version '2.6.3'
+//	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+//	id 'java'
+//}
+//
+//group = 'com.example'
+//version = '0.0.1-SNAPSHOT'
+//sourceCompatibility = '1.8'
+//
+//repositories {
+//	mavenCentral()
+//}
+//
+//ext {
+//	set('azureVersion', "3.13.0")
+//}
+//
+//dependencies {
+//	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+//	implementation 'org.springframework.boot:spring-boot-starter-web'
+//	implementation 'com.azure.spring:azure-spring-boot-starter-active-directory'
+//	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+//}
+//
+//dependencyManagement {
+//	imports {
+//		mavenBom "com.azure.spring:azure-spring-boot-bom:${azureVersion}"
+//	}
+//}
+//
+//tasks.named('test') {
+//	useJUnitPlatform()
+//}
 plugins {
 	id 'org.springframework.boot' version '2.6.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -18,9 +52,12 @@ ext {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'com.azure.spring:azure-spring-boot-starter-active-directory'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 dependencyManagement {
@@ -32,3 +69,9 @@ dependencyManagement {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// bootRun {
+//   if ( project.hasProperty('springDebug') ) {
+//       args '--debug'
+//   }
+// }
