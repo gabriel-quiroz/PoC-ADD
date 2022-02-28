@@ -16,9 +16,9 @@ import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 
-// README: se puede utilizar para las autorizaciones por roles, pero no se pudo probar
-// README: no se iba a la autorizacion de azure, quiza por la falta de roles
+// README: no se iba a la autorizacion de azure, pero es lo que trae el tutorial de ADD
 //// public class SecurityConfig extends ResourceServerConfigurerAdapter{
+
 // public class SecurityConfig extends
 // AADResourceServerWebSecurityConfigurerAdapter {
 

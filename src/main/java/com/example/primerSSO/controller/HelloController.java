@@ -17,15 +17,15 @@ public class HelloController {
     @GetMapping("admin")
     @ResponseBody
     // @PreAuthorize("hasAuthority('APPROLE_Admin')")
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     public String admin() {
-        return "endpoint protegido message";
+        return "endpoint protegido por el rol del usuario";
     }
 
     @GetMapping("otro")
     @ResponseBody
-    // @PreAuthorize("hasAuthority('APPROLE_Admin')")
     public String otro() {
-        return "endpoint libre";
+        return "endpoint libre sin necesidad de rol de usuario";
     }
 
     @GetMapping("logs")
