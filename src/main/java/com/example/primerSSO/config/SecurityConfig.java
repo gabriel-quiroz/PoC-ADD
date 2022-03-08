@@ -1,8 +1,21 @@
 package com.example.primerSSO.config;
 
-//import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+// import java.util.HashSet;
+// import java.util.Set;
 
-import com.azure.spring.aad.webapi.AADResourceServerWebSecurityConfigurerAdapter;
+// import com.azure.spring.aad.webapi.AADResourceServerWebSecurityConfigurerAdapter;
+// import org.springframework.security.core.GrantedAuthority;
+// import org.springframework.security.oauth2.client.oidc.userinfo.OidcUserService;
+// import org.springframework.security.oauth2.core.OAuth2AccessToken;
+// import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
+
+import com.azure.spring.autoconfigure.aad.AADAuthenticationProperties;
+import com.example.primerSSO.service.MyAuth2UserService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,32 +28,55 @@ import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-
-// README: no se iba a la autorizacion de azure, pero es lo que trae el tutorial de ADD
-//// public class SecurityConfig extends ResourceServerConfigurerAdapter{
-
-// public class SecurityConfig extends
-// AADResourceServerWebSecurityConfigurerAdapter {
-
-// @Override
-// public void configure(HttpSecurity http) throws Exception {
-// http.authorizeRequests()
-// .antMatchers("/**")
-// .permitAll()
-// .anyRequest().authenticated()
-// .and().formLogin()
-// .and().csrf().disable()
-// .httpBasic().disable();
-// }
-// }
-
-// README: con este se logra que vaya a realizar el login con azure
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final OAuth2UserService<OidcUserRequest, OidcUser> oidcUserService;
+    Logger log = LoggerFactory.getLogger(SecurityConfig.class);
 
-    public SecurityConfig(OAuth2UserService<OidcUserRequest, OidcUser> oidcUserService) {
-        this.oidcUserService = oidcUserService;
+    // private final OAuth2UserService<OidcUserRequest, OidcUser> oidcUserService;
+
+    // public SecurityConfig(OAuth2UserService<OidcUserRequest, OidcUser>
+    // oidcUserService) {
+    // this.oidcUserService = oidcUserService;
+    // }
+    // ---------------------------------------------------------------- A
+    // private OAuth2UserService<OidcUserRequest, OidcUser> oidcUserService() {
+    // log.info("entro chinga");
+    // final OidcUserService delegate = new OidcUserService();
+
+    // return (userRequest) -> {
+    // // Delegate to the default implementation for loading a user
+    // OidcUser oidcUser = delegate.loadUser(userRequest);
+
+    // OAuth2AccessToken accessToken = userRequest.getAccessToken();
+    // Set<GrantedAuthority> mappedAuthorities = new HashSet<>();
+
+    // log.info("--->>>getAttributes: {}",oidcUser.getAttributes());
+    // log.info("--->>>grant_type: {}", oidcUser.getAuthorities());
+    // log.info("--->>>name: {}", oidcUser.getName());
+
+    // // TODO
+    // // 1) Fetch the authority information from the protected resource using
+    // accessToken
+    // // 2) Map the authority information to one or more GrantedAuthority's and add
+    // it to mappedAuthorities
+
+    // // 3) Create a copy of oidcUser but use the mappedAuthorities instead
+    // oidcUser = new DefaultOidcUser(mappedAuthorities, oidcUser.getIdToken(),
+    // oidcUser.getUserInfo());
+
+    // return oidcUser;
+    // };
+    // }
+
+    // ---------------------------------------------------------------- B
+    @Autowired
+    private AADAuthenticationProperties aadAuthProps;
+    // @Autowired
+    // private ServiceEndpointsProperties serviceEndpointsProps;
+
+    @Bean
+    protected OAuth2UserService<OidcUserRequest, OidcUser> myAuth2UserService() {
+        return new MyAuth2UserService(aadAuthProps);
     }
 
     @Override
@@ -51,6 +87,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .oauth2Login()
                 .userInfoEndpoint()
-                .oidcUserService(oidcUserService);
+                // .oidcUserService(oidcUserService);
+                // .oidcUserService(this.oidcUserService());
+                .oidcUserService(myAuth2UserService());
     }
 }

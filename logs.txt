@@ -1,0 +1,79 @@
+----------------------------------------------------------- usando A
+
+2022-03-04 20:16:17.851 DEBUG 24543 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : HTTP POST https://login.microsoftonline.com/55e9c412-e275-4275-8a87-8c49b5064d81/oauth2/v2.0/token
+2022-03-04 20:16:17.852 DEBUG 24543 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2022-03-04 20:16:17.853 DEBUG 24543 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], code=[0.AUYAEsTpVXXidUKKh4xJtQZNgT_Aibz0hxVMjhfwGjloVUCAAAA.AQABAAIAAAD--DLA3VO7QrddgJg7WevrfFz1Et1EWuY6eatPA9bfh30PSO6FvlFH_uy9Ett4fFORoEXwu_LZcpj0e28kszJ1lCuVukUqZ9rxBTxEQABmD3nXld_5R8C36jDqN4w2S96zDkQlkO2AH78pMTZCwei3nYzCUdBe0VdoalRGi0vxjvH3nJPFcZNWnU1Pa1pLD9kOvA4wh3iOx8xUiOZdPSM9pJh9YyJh6xP-E7eLrjkoes_JXJVruCS9GIwTfhdYNUqsIspt97Hw-zuzesKvIXaURDPj03ddpbuDxm7BoEp6t1tiC97D82geuHbrNb76b1o8Vf1qenX9SsN457CKhllXtpjOxC86kNI5OFx1Na8OjcUwYaXg6mjtiKVFtqDAXa_ccwwF98qI92xOAx32Ym3d-1SydlvAxkfn7WaB86YTd7uVuQ3gksNbxomK_Z79y_s2sNDT_5EKxxQSXFl1q6XiIALk48oSvmuqY_et6LmE2I-yGu9Vf6U_XLpypxhD3iLYUERBFKX4Aj0U_7vgQZGIsv2iVUBT4NUcSUe7KRQyRO3ybFjeUQHmbWeak4RUovF76_NdZua04GsMxaQ97otC8XQHPz7yODj8rl3RFUP9jnjwvC723GPjxXlp1RDIJVPzDMICpg3ZgV-gbHuKI9Lp5PpBb2X910fkQ9YNO5VjtXTQK5HXdLMDt8UdEz5wDIIgAA], redirect_uri=[http://localhost:8080/login/oauth2/code/]}] as "application/x-www-form-urlencoded;charset=UTF-8"
+2022-03-04 20:16:18.568 DEBUG 24543 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Response 200 OK
+2022-03-04 20:16:18.569 DEBUG 24543 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Reading to [org.springframework.security.oauth2.core.endpoint.OAuth2AccessTokenResponse] as "application/json;charset=utf-8"
+2022-03-04 20:16:18.651 DEBUG 24543 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : HTTP GET https://login.microsoftonline.com/55e9c412-e275-4275-8a87-8c49b5064d81/discovery/v2.0/keys
+2022-03-04 20:16:18.652 DEBUG 24543 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2022-03-04 20:16:18.877 DEBUG 24543 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Response 200 OK
+2022-03-04 20:16:18.878 DEBUG 24543 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=utf-8"
+2022-03-04 20:16:18.889  INFO 24543 --- [nio-8080-exec-5] c.e.primerSSO.config.SecurityConfig      : --->>>getAttributes: {sub=d0m7CfBHmd4e1y5Po_QBh_Ztw2u_tZz7oJikUlo3fM8, ver=2.0, aio=ATQAy/8TAAAAeEgLk1zQV+PVTlirBaRD6BP0tbYpPHcpEpFVcRB4TnGkZb/kPhD1Iu23v5qrd3cy, iss=https://login.microsoftonline.com/55e9c412-e275-4275-8a87-8c49b5064d81/v2.0, oid=9e3ffe2c-e7d9-4a31-80a3-36eb8e194ffd, preferred_username=test-user@gbrlquirozhotmail.onmicrosoft.com, uti=IMj52-Nhz0KqSAxifdpSAA, nonce=PncaA0RzcOQ6YsJGlpM2aTMWeAoVhfe5ylQmmya4cak, tid=55e9c412-e275-4275-8a87-8c49b5064d81, aud=[bc89c03f-87f4-4c15-8e17-f01a39685540], nbf=Fri Mar 04 20:11:18 CST 2022, rh=0.AUYAEsTpVXXidUKKh4xJtQZNgT_Aibz0hxVMjhfwGjloVUCAAAc., name=Test User, exp=2022-03-05T03:16:18Z, iat=2022-03-05T02:11:18Z}
+2022-03-04 20:16:18.891  INFO 24543 --- [nio-8080-exec-5] c.e.primerSSO.config.SecurityConfig      : --->>>grant_type: [ROLE_USER, SCOPE_Directory.AccessAsUser.All, SCOPE_User.Read, SCOPE_email, SCOPE_openid, SCOPE_profile]
+2022-03-04 20:16:18.891  INFO 24543 --- [nio-8080-exec-5] c.e.primerSSO.config.SecurityConfig      : --->>>name: d0m7CfBHmd4e1y5Po_QBh_Ztw2u_tZz7oJikUlo3fM8
+2022-03-04 20:16:18.976 DEBUG 24543 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/logs", parameters={}
+2022-03-04 20:16:18.982 DEBUG 24543 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.primerSSO.controller.HelloController#logs()
+2022-03-04 20:16:18.998  INFO 24543 --- [nio-8080-exec-6] c.e.p.controller.HelloController         : An INFO Message
+2022-03-04 20:16:18.998  WARN 24543 --- [nio-8080-exec-6] c.e.p.controller.HelloController         : A WARN Message
+2022-03-04 20:16:18.998 ERROR 24543 --- [nio-8080-exec-6] c.e.p.controller.HelloController         : An ERROR Message
+2022-03-04 20:16:19.005 DEBUG 24543 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2022-03-04 20:16:19.005 DEBUG 24543 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing ["logs"]
+2022-03-04 20:16:19.009 DEBUG 24543 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+
+
+
+
+
+----------------------------------------------------------- usando B  (endpoint /logs)
+
+2022-03-07 13:30:15.544 DEBUG 11610 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : HTTP POST https://login.microsoftonline.com/55e9c412-e275-4275-8a87-8c49b5064d81/oauth2/v2.0/token
+2022-03-07 13:30:15.545 DEBUG 11610 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Accept=[application/json, application/*+json]
+2022-03-07 13:30:15.546 DEBUG 11610 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Writing [{grant_type=[authorization_code], code=[0.AUYAEsTpVXXidUKKh4xJtQZNgT_Aibz0hxVMjhfwGjloVUCAAAA.AQABAAIAAAD--DLA3VO7QrddgJg7WevrNIG0_UZcJWr3PyYR9per3h6B-JxJl4qGKFU1ulAKL1pYEt0gNBEFlLMnKcvdHH4YIs9kcPdbEdA_qc0iHghPeJ2wU212ikikewaFpIFLiMknFDcUdW4w1uQptdl02ntNwjxEmRTsMLLX3tReYREm0jgPldH0tkw-6zX-VR7db8MCCX8TOOZXgOlSFwn6S9P7g8szvoh9j-voh8vDoq3WhYejRNtEclnLIDIRUbCXw211jVwdHbr2CS5q6U0xi0NeqoI6tWaL40qlvMe_YXLIc_nQoNZmfYRE4iKjYB8rH4ENLxhhXhAz-SIDj8Eh3ajL9QPOlxldSzdhH0-cFjpOnU_m3A4t848w5FnbJVfrHxDDJT4nuoyCBCtTMrdV9mP3X3Tbd48pq-UXGhicX6-o7rXk_RNvd363quMU-UV0ZVRCyjniZglFyjPwHIPiaPl9CyYghqtxiTyv2dQUian-Jlnav6DjhD9FZFP9R12qy9Lr4E5w6H9Ap-kW8L0RaNSfFsZ6fGDwdmcUE1ImXvTj7nty-bInCHRGpdTmRNzVkjhphu056oitJ2NtiP632Vh5m-kjoEXJARbpV73bhtnccxtKEh0r7K27SZCErEy77AMf6gWWNSCSHY_OpC8KpfbD5OPa3hkzHLSl01YtZvf6eObRL44x7TGO2VG2nzgg_AIgAA], redirect_uri=[http://localhost:8080/login/oauth2/code/]}] as "application/x-www-form-urlencoded;charset=UTF-8"
+2022-03-07 13:30:16.239 DEBUG 11610 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Response 200 OK
+2022-03-07 13:30:16.239 DEBUG 11610 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Reading to [org.springframework.security.oauth2.core.endpoint.OAuth2AccessTokenResponse] as "application/json;charset=utf-8"
+2022-03-07 13:30:16.321 DEBUG 11610 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : HTTP GET https://login.microsoftonline.com/55e9c412-e275-4275-8a87-8c49b5064d81/discovery/v2.0/keys
+2022-03-07 13:30:16.322 DEBUG 11610 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2022-03-07 13:30:16.461 DEBUG 11610 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Response 200 OK
+2022-03-07 13:30:16.461 DEBUG 11610 --- [nio-8080-exec-5] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "application/json;charset=utf-8"
+2022-03-07 13:30:16.474  INFO 11610 --- [nio-8080-exec-5] c.e.p.service.MyAuth2UserService         :
+--->>>MyAuth2UserService--->>>loadUser()
+
+2022-03-07 13:30:16.479 DEBUG 11610 --- [nio-8080-exec-5] c.a.s.aad.webapp.AADOAuth2UserService    : User Test User's authorities extracted by id token and access token: [ROLE_USER].
+2022-03-07 13:30:16.480  INFO 11610 --- [nio-8080-exec-5] c.e.p.service.MyAuth2UserService         :
+--->>>usuario: Name: [Test User], Granted Authorities: [[ROLE_USER]], User Attributes: [{sub=d0m7CfBHmd4e1y5Po_QBh_Ztw2u_tZz7oJikUlo3fM8, ver=2.0, aio=ATQAy/8TAAAAypYZGE89FWcetZMm2X4EPw3wnK/+X6OqTxWObtMarEj1gPD/pnIfE6jsXdOthy7P, iss=https://login.microsoftonline.com/55e9c412-e275-4275-8a87-8c49b5064d81/v2.0, oid=9e3ffe2c-e7d9-4a31-80a3-36eb8e194ffd, preferred_username=test-user@gbrlquirozhotmail.onmicrosoft.com, uti=Vfm5aBK9v0KyUAUi2LPYAA, nonce=AEC-tPdgtoLINsCQgOUNeXbS6vIuLc444-NaGncKU8Y, tid=55e9c412-e275-4275-8a87-8c49b5064d81, aud=[bc89c03f-87f4-4c15-8e17-f01a39685540], nbf=Mon Mar 07 13:25:16 CST 2022, rh=0.AUYAEsTpVXXidUKKh4xJtQZNgT_Aibz0hxVMjhfwGjloVUCAAAc., name=Test User, exp=2022-03-07T20:30:16Z, iat=2022-03-07T19:25:16Z}]
+2022-03-07 13:30:16.481  INFO 11610 --- [nio-8080-exec-5] c.e.p.service.MyAuth2UserService         :
+--->>>preferred_username: test-user@gbrlquirozhotmail.onmicrosoft.com
+2022-03-07 13:30:16.481  INFO 11610 --- [nio-8080-exec-5] c.e.p.service.MyAuth2UserService         :
+--->>>name: Test User
+2022-03-07 13:30:16.481  INFO 11610 --- [nio-8080-exec-5] c.e.p.service.MyAuth2UserService         :
+--->>>mappedAuthorities: [ROLE_USER]
+2022-03-07 13:30:16.482  INFO 11610 --- [nio-8080-exec-5] c.e.p.service.MyAuth2UserService         :
+--->>>usuario.getIdToken(): org.springframework.security.oauth2.core.oidc.OidcIdToken@5c9c9c54
+2022-03-07 13:30:16.482  INFO 11610 --- [nio-8080-exec-5] c.e.p.service.MyAuth2UserService         :
+--->>>userInfo: null
+2022-03-07 13:30:16.566 DEBUG 11610 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/logs", parameters={}
+2022-03-07 13:30:16.571 DEBUG 11610 --- [nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.primerSSO.controller.HelloController#logs()
+2022-03-07 13:30:16.590 DEBUG 11610 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2022-03-07 13:30:16.591 DEBUG 11610 --- [nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing ["enpoint para forzar el login"]
+2022-03-07 13:30:16.595 DEBUG 11610 --- [nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+
+
+
+
+----------------------------------------------------------- usando B  (endpoint  /otro)
+
+2022-03-08 10:00:05.445 DEBUG 3750 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/otro", parameters={}
+2022-03-08 10:00:05.445 DEBUG 3750 --- [nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.primerSSO.controller.HelloController#otro(OAuth2AuthenticationToken)
+2022-03-08 10:00:05.446  INFO 3750 --- [nio-8080-exec-8] c.e.p.controller.HelloController         :
+--->>>HelloController--->>>otro()
+
+2022-03-08 10:00:05.446  INFO 3750 --- [nio-8080-exec-8] c.e.p.controller.HelloController         : --->>>getAttributes: {sub=d0m7CfBHmd4e1y5Po_QBh_Ztw2u_tZz7oJikUlo3fM8, ver=2.0, aio=ATQAy/8TAAAAoTrjA6yqeGzAnyivF38fP2DS+gyuUfBV1B32Df2MwULrS/1eOiwC+SLnYHgls+Tv, profile=[crearSIMS, BorrarSIMS], iss=https://login.microsoftonline.com/55e9c412-e275-4275-8a87-8c49b5064d81/v2.0, oid=9e3ffe2c-e7d9-4a31-80a3-36eb8e194ffd, preferred_username=test-user@gbrlquirozhotmail.onmicrosoft.com, uti=h3wa-IeTmkucHj13WrI-AQ, nonce=vZwrVBgNCXCTtrhxik4X32gVZE-meAOXddU2zmfV8Kg, tid=55e9c412-e275-4275-8a87-8c49b5064d81, aud=[bc89c03f-87f4-4c15-8e17-f01a39685540], nbf=Tue Mar 08 09:54:41 CST 2022, rh=0.AUYAEsTpVXXidUKKh4xJtQZNgT_Aibz0hxVMjhfwGjloVUCAAAc., name=Test User, exp=2022-03-08T16:59:41Z, iat=2022-03-08T15:54:41Z}
+2022-03-08 10:00:05.446  INFO 3750 --- [nio-8080-exec-8] c.e.p.controller.HelloController         : --->>>getAuthorities: [ROLE_DE_SIMS, ROLE_USER]
+2022-03-08 10:00:05.446  INFO 3750 --- [nio-8080-exec-8] c.e.p.controller.HelloController         : --->>>name: d0m7CfBHmd4e1y5Po_QBh_Ztw2u_tZz7oJikUlo3fM8
+2022-03-08 10:00:05.447 DEBUG 3750 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2022-03-08 10:00:05.447 DEBUG 3750 --- [nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing ["endpoint sin @PreAuthorize"]
+2022-03-08 10:00:05.447 DEBUG 3750 --- [nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+
+
+
