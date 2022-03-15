@@ -1,0 +1,26 @@
+azure:
+  activedirectory:
+    tenant-id: 55e9c412-e275-4275-8a87-8c49b5064d81
+    client-id: bc89c03f-87f4-4c15-8e17-f01a39685540
+    client-secret: =VRr7Q~ZTjbmumsioDCVV28KGrFTLASJlWOTFa
+
+logging: 
+  level:
+    root: INFO
+    org: 
+      springframework:
+        web: DEBUG
+      hibernate: ERROR
+    com:
+      azure:
+        spring:
+          aad:
+            AADJwtGrantedAuthoritiesConverter: DEBUG
+            webapp:
+              AADOAuth2UserService: DEBUG
+
+spring:
+  mvc:
+    log-request-details: true
+  main:
+    allow-bean-definition-overriding: true
